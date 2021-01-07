@@ -1,0 +1,8 @@
+# Build
+build/
+
+# Node
+node_modules
+
+# Dotenv
+.env

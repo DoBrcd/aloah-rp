@@ -1,0 +1,13 @@
+{
+  "name": "La poursuite du Hello World !",
+  "characters": [
+    {
+      "name": "Tristan",
+      "life": 10,
+      "investigation": 3,
+      "vigilance": 0,
+      "atk": 2,
+      "weapons": []
+    }
+  ]
+}
