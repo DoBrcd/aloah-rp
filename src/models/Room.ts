@@ -5,5 +5,5 @@ export interface IRoom {
     name: string;
     description: string;
     linkToRooms: IRoom[];
-    actionsAvailable: IAction[];
+    actions: IAction[];
 }

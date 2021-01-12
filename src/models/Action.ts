@@ -8,7 +8,7 @@ export interface IAction{
     eventIfSuccess: IEvent;
     eventIfFailed: IEvent;
     reward: IItem[];
-    status: ActionStatus;
+    status: ActionStatus[];
 }
 
 export enum ActionType{
@@ -19,5 +19,8 @@ export enum ActionType{
 }
 
 export enum ActionStatus{
-    
+    available,
+    lock,
+    used,
+    reusable
 }
