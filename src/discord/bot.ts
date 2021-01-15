@@ -1,4 +1,5 @@
 import { Client, Message } from "discord.js";
+import { discordLogger } from "../common/log";
 import { getInstanceManager } from "./InstanceManager";
 
 export function startDiscordBot() {
@@ -6,7 +7,7 @@ export function startDiscordBot() {
   const prefix = process.env.DISCORD_PREFIX!;
 
   client.on("ready", () => {
-    console.log(`Logged in as ${client.user?.tag}!`);
+    discordLogger.info(`Logged in as ${client.user?.tag} !`);
   });
 
   client.on("message", (msg: Message) => {

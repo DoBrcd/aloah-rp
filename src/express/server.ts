@@ -1,4 +1,5 @@
 import * as express from "express";
+import { webLogger } from "../common/log";
 import { getInstanceManager } from "../discord/InstanceManager";
 
 export function startExpressServer() {
@@ -18,6 +19,6 @@ export function startExpressServer() {
   });
 
   app.listen(port, () => {
-    console.log(`Web Server listening on port ${port}`);
+    webLogger.info(`Web Server listening on port ${port}`);
   });
 }
