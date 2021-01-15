@@ -1,9 +1,7 @@
 import * as dotenv from "dotenv";
+dotenv.config();
 import { startDiscordBot } from "./discord/bot";
 import { startExpressServer } from "./express/server";
-
-// Configure dotenv
-dotenv.config();
 
 // Start discord bot
 startDiscordBot();
