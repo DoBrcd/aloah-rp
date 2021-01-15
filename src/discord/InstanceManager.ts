@@ -7,7 +7,7 @@ export class InstanceManager {
     this.instances = {};
   }
 
-  addInstance(id: string) {
+  addInstance(id: string): void {
     this.instances[id] = new Instance(id);
   }
 
@@ -21,6 +21,6 @@ export class InstanceManager {
 }
 
 const instanceManager = new InstanceManager();
-export function getInstanceManager() {
+export function getInstanceManager(): InstanceManager {
   return instanceManager;
 }

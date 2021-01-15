@@ -9,7 +9,7 @@ export class Game {
     this.scenario = scenario;
   }
 
-  addPlayer(player: Player) {
+  addPlayer(player: Player): void {
     this.players.push(player);
   }
 }

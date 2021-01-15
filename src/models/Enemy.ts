@@ -26,21 +26,21 @@ export class Enemy {
         this.weapons = this.iEnemy.weapons;
     }
 
-    addLife(amount: number) {
+    addLife(amount: number): void {
         this.life += amount;
         if (this.life > this.iEnemy.life) {
             this.life = this.iEnemy.life;
         }
     }
 
-    removeLife(amount: number) {
+    removeLife(amount: number): void {
         this.life -= amount;
         if (this.life <= 0) {
             this.status.push(EStatus.DEAD);
         }
     }
 
-    getDamage(dice: number) {
+    getDamage(dice: number): number {
         return dice + this.iEnemy.atk + (this.weapons[0] ? this.weapons[0].atk : 0);
     }
 }

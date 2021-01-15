@@ -2,7 +2,7 @@ import * as express from "express";
 import { webLogger } from "../common/log";
 import { getInstanceManager } from "../discord/InstanceManager";
 
-export function startExpressServer() {
+export function startExpressServer(): void {
   const port = process.env.EXPRESS_PORT;
   const app = express();
 

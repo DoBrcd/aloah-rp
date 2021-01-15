@@ -9,7 +9,7 @@ export class Instance {
     this.id = id;
   }
 
-  setScenario(scenario: IScenario) {
+  setScenario(scenario: IScenario): void {
     this.game = new Game(scenario);
   }
 }

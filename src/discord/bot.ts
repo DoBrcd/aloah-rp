@@ -2,9 +2,9 @@ import { Client, Message } from "discord.js";
 import { discordLogger } from "../common/log";
 import { getInstanceManager } from "./InstanceManager";
 
-export function startDiscordBot() {
+export function startDiscordBot(): void {
   const client = new Client();
-  const prefix = process.env.DISCORD_PREFIX!;
+  const prefix = process.env.DISCORD_PREFIX || "!pr";
 
   client.on("ready", () => {
     discordLogger.info(`Logged in as ${client.user?.tag} !`);
@@ -12,7 +12,7 @@ export function startDiscordBot() {
 
   client.on("message", (msg: Message) => {
     if (!msg.author.bot && msg.content.startsWith(prefix)) {
-      const [_, action, ...args]: string[] = msg.content.split(" ");
+      const [, action]: string[] = msg.content.split(" ");
       if (action === "config") {
         const instanceManager = getInstanceManager();
         const instanceId = msg.channel.id;

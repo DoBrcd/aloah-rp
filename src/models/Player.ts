@@ -45,37 +45,37 @@ export class Player {
     };
   }
 
-  addLife(amount: number) {
+  addLife(amount: number): void {
     this.life += amount;
     if (this.life > this.character.life) {
       this.life = this.character.life;
     }
   }
 
-  removeLife(amount: number) {
+  removeLife(amount: number): void {
     this.life -= amount;
     if (this.life <= 0) {
       this.status.push(EStatus.DEAD);
     }
   }
 
-  getDamage(dice: number) {
+  getDamage(dice: number): number {
     return dice + this.character.atk + (this.weapon ? this.weapon.atk : 0);
   }
 
-  getInvestigation(dice: number) {
+  getInvestigation(dice: number): number {
     return dice + this.character.investigation;
   }
 
-  getVigilance(dice: number) {
+  getVigilance(dice: number): number {
     return dice + this.character.vigilance;
   }
 
-  addItem(item: IItem) {
+  addItem(item: IItem): void {
     this.items[item.id] = item;
   }
 
-  removeItem(item: IItem) {
+  removeItem(item: IItem): void {
     delete this.items[item.id];
   }
 }
